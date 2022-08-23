@@ -1,28 +1,31 @@
 #include "sort.h"
 
 /**
- * bubble_sort - sdsd
- * @array: dsdsd
- * @size: sdsds
-*/
-void bubble_sort(int array[], int size)
+ * bubble_sort - sort an array in ascending order
+ * using the Bubble sort algorithm
+ * @array: array of integers
+ * @size: size of the array
+ * Return: Nothing
+ */
+
+void bubble_sort(int *array, size_t size)
 {
-for (int step = 0; step < size - 1; ++step)
-{
-int swapped = 0;
-for (int i = 0; i < size - step - 1; ++i)
-{
-if (array[i] > array[i + 1])
-{
-int temp = array[i];
-array[i] = array[i + 1];
-array[i + 1] = temp;
-swapped = 1;
-}
-}
-if (swapped == 0)
-{
-break;
-}
-}
+	size_t i, j, tmp;
+
+	if (size < 2 || array == NULL)
+		return;
+
+	for (i = 0; i < size - 1; i++)
+	{
+		for (j = 0; j < size - 1; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				tmp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = tmp;
+				print_array(array, size);
+			}
+		}
+	}
 }
