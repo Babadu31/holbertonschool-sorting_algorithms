@@ -24,16 +24,18 @@ int Partition(int *array, int p, int r, size_t size)
 			tmp = array[i];
 			array[i] = array[j];
 			array[j] = tmp;
-		}
-		if (j == r - 1)
+			if (array[i] == array[j])
+				continue;
 			print_array(array, size);
+		}
 		tmp = 0;
 	}
 	i = i + 1;
 	tmp = array[i];
 	array[i] = array[r];
 	array[r] = tmp;
-	print_array(array, size);
+	if (array[i] != array[r])
+		print_array(array, size);
 	return (i);
 }
 
