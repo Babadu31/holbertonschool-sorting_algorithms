@@ -24,8 +24,9 @@ int Partition(int *array, int p, int r, size_t size)
 			tmp = array[i];
 			array[i] = array[j];
 			array[j] = tmp;
-			print_array(array, size);
 		}
+		if (j == r - 1)
+			print_array(array, size);
 		tmp = 0;
 	}
 	i = i + 1;
@@ -33,7 +34,6 @@ int Partition(int *array, int p, int r, size_t size)
 	array[i] = array[r];
 	array[r] = tmp;
 	print_array(array, size);
-
 	return (i);
 }
 
